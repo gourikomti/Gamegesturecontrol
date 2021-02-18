@@ -1,14 +1,22 @@
-import React, {useRef} from 'react';
+import React, {useRef , useState} from 'react';
 import * as tf from '@tensorflow/tfjs';
 import * as handpose from '@tensorflow-models/handpose';
 //import logo from './logo.svg';
 import Webcam from  "react-webcam";
 import './App.css';
 import {drawHand} from './utilities';
+import {palmGesture} from './gestures/Palm';
+import {rightGesture} from './gestures/right';
+import {leftGesture} from './gestures/left';
+
+import * as fp from 'fingerpose';
+import handimage from './hand.jpg';
 
 function App() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
+
+  const[emo , setEmo] = useState(null);
 
  const runHandpose = async () =>{
    const net = await handpose.load()
@@ -41,7 +49,29 @@ function App() {
     //make detections
 
     const hand = await net.estimateHands(video);
-    console.log(hand);
+
+
+    if(hand.length > 0){
+      const GE = new fp.GestureEstimator([
+        // fp.Gestures.VictoryGesture,
+        // fp.Gestures.ThumbsUpGesture,
+        leftGesture,
+        rightGesture,
+        palmGesture
+      ]);
+
+      const gesture = await GE.estimate(hand[0].landmarks , 8.8);
+
+      console.log(gesture)
+      if(gesture.gestures !== undefined && gesture.gestures.length > 0){
+        const confidence = gesture.gestures.map((prediction)=> prediction.confidence);
+        const maxIndex = confidence.indexOf(Math.max.apply(null, confidence));
+
+        setEmo(gesture.gestures[maxIndex].name);
+        console.log(emo);
+
+      }
+    }
 
     const ctx = canvasRef.current.getContext("2d");
     drawHand(hand, ctx);
@@ -82,6 +112,7 @@ function App() {
           width: 640,
           height: 480,
         }}/>
+        
 
         )
         

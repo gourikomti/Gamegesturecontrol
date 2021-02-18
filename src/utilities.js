@@ -23,7 +23,6 @@ export const drawHand = (predictions, ctx) =>{
                     const firstJointIndex = fingerjoints[finger][k];
                     const secondJointIndex = fingerjoints[finger][k+1];
 
-                    console.log('running');
 
                     ctx.beginPath();
                     ctx.moveTo(
