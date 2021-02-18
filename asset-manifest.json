@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Gamegesturecontrol/static/css/main.7d180cbf.chunk.css",
+    "main.js": "/Gamegesturecontrol/static/js/main.0a5272e9.chunk.js",
+    "main.js.map": "/Gamegesturecontrol/static/js/main.0a5272e9.chunk.js.map",
+    "runtime-main.js": "/Gamegesturecontrol/static/js/runtime-main.232dd813.js",
+    "runtime-main.js.map": "/Gamegesturecontrol/static/js/runtime-main.232dd813.js.map",
+    "static/js/2.bf825d02.chunk.js": "/Gamegesturecontrol/static/js/2.bf825d02.chunk.js",
+    "static/js/2.bf825d02.chunk.js.map": "/Gamegesturecontrol/static/js/2.bf825d02.chunk.js.map",
+    "static/js/3.2f1b13a9.chunk.js": "/Gamegesturecontrol/static/js/3.2f1b13a9.chunk.js",
+    "static/js/3.2f1b13a9.chunk.js.map": "/Gamegesturecontrol/static/js/3.2f1b13a9.chunk.js.map",
+    "index.html": "/Gamegesturecontrol/index.html",
+    "static/css/main.7d180cbf.chunk.css.map": "/Gamegesturecontrol/static/css/main.7d180cbf.chunk.css.map",
+    "static/js/2.bf825d02.chunk.js.LICENSE.txt": "/Gamegesturecontrol/static/js/2.bf825d02.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.232dd813.js",
+    "static/js/2.bf825d02.chunk.js",
+    "static/css/main.7d180cbf.chunk.css",
+    "static/js/main.0a5272e9.chunk.js"
+  ]
+}
